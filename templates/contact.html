@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — GIBYT</title>
+<meta name="description" content="Get in touch with GIBYT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="flash-messages">
+    {% for category, message in messages %}
+    <p class="flash flash-{{ category }}">{{ message }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="{{ url_for('main.index') }}" class="brand">
+      <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="GIBYT" class="brand-logo">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="{{ url_for('main.index') }}">Home</a>
+      <a href="{{ url_for('main.about') }}">About</a>
+      <a href="{{ url_for('main.work') }}">Our Work</a>
+      <a href="{{ url_for('main.products') }}">Products</a>
+      <a href="{{ url_for('main.careers') }}">Careers</a>
+      <a href="{{ url_for('main.contact') }}" class="active">Contact</a>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-primary nav-login">Login</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <p class="eyebrow">Contact</p>
+    <h1>Tell us what<br>you're building.</h1>
+    <p class="hero-sub">
+      Whether it's a project, a question, or just hello — we read everything.
+    </p>
+  </section>
+
+  <section class="section contact-section">
+    <form class="contact-form" method="POST" action="{{ url_for('main.contact') }}" novalidate>
+      {{ form.hidden_tag() }}
+
+      <div class="form-row {% if form.name.errors %}invalid{% endif %}">
+        {{ form.name.label }}
+        {{ form.name(autocomplete="name") }}
+        <span class="form-error">{% if form.name.errors %}{{ form.name.errors[0] }}{% endif %}</span>
+      </div>
+
+      <div class="form-row {% if form.email.errors %}invalid{% endif %}">
+        {{ form.email.label }}
+        {{ form.email(autocomplete="email") }}
+        <span class="form-error">{% if form.email.errors %}{{ form.email.errors[0] }}{% endif %}</span>
+      </div>
+
+      <div class="form-row {% if form.subject.errors %}invalid{% endif %}">
+        {{ form.subject.label }}
+        {{ form.subject() }}
+        <span class="form-error">{% if form.subject.errors %}{{ form.subject.errors[0] }}{% endif %}</span>
+      </div>
+
+      <div class="form-row {% if form.message.errors %}invalid{% endif %}">
+        {{ form.message.label }}
+        {{ form.message(rows="5") }}
+        <span class="form-error">{% if form.message.errors %}{{ form.message.errors[0] }}{% endif %}</span>
+      </div>
+
+      {{ form.submit(class="btn btn-primary") }}
+    </form>
+
+    <div class="contact-info">
+      <div>
+        <h4>Email</h4>
+        <a href="mailto:hello@gibyt.com">hello@gibyt.com</a>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="GIBYT" class="footer-logo">
+      <p class="footer-tagline">From Gigabytes to Innovation</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+        <a href="{{ url_for('main.work') }}">Our Work</a>
+        <a href="{{ url_for('main.products') }}">Products</a>
+        <a href="{{ url_for('main.careers') }}">Careers</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>

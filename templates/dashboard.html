@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - GIBYT</title>
+<meta name="description" content="Your GIBYT account dashboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="flash-messages">
+    {% for category, message in messages %}
+    <p class="flash flash-{{ category }}">{{ message }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="{{ url_for('main.index') }}" class="brand">
+      <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="GIBYT" class="brand-logo">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="{{ url_for('main.index') }}">Home</a>
+      <a href="{{ url_for('main.about') }}">About</a>
+      <a href="{{ url_for('main.work') }}">Our Work</a>
+      <a href="{{ url_for('main.products') }}">Products</a>
+      <a href="{{ url_for('main.careers') }}">Careers</a>
+      <a href="{{ url_for('main.contact') }}">Contact</a>
+      <a href="{{ url_for('auth.logout') }}" class="btn btn-primary nav-login">Log out</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <p class="eyebrow">Dashboard</p>
+    <h1>Welcome, {{ current_user.name }}.</h1>
+    <p class="hero-sub">Member since {{ current_user.created_at.strftime('%B %d, %Y') }}.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Available products</h2>
+      <p class="section-lede">GIBYT's own products, once they're ready to use.</p>
+    </div>
+    <div class="placeholder-card">
+      <span class="status-pill status-pill-muted">Coming soon</span>
+      <p>No products are live yet - this is where they'll show up once they exist. Nothing to see here for now.</p>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="account-settings">
+    <div class="section-head">
+      <h2>Account settings</h2>
+      <p class="section-lede">Update your name, email, or password.</p>
+    </div>
+
+    <div class="settings-grid">
+
+      <form class="contact-form auth-card" method="POST" action="{{ url_for('dashboard.update_name') }}" novalidate>
+        <h3>Name</h3>
+        {{ name_form.hidden_tag() }}
+        <div class="form-row {% if name_form.name.errors %}invalid{% endif %}">
+          {{ name_form.name.label }}
+          {{ name_form.name() }}
+          <span class="form-error">{% if name_form.name.errors %}{{ name_form.name.errors[0] }}{% endif %}</span>
+        </div>
+        {{ name_form.submit_name(class="btn btn-ghost") }}
+      </form>
+
+      <form class="contact-form auth-card" method="POST" action="{{ url_for('dashboard.update_email') }}" novalidate>
+        <h3>Email</h3>
+        {{ email_form.hidden_tag() }}
+        <div class="form-row {% if email_form.email.errors %}invalid{% endif %}">
+          {{ email_form.email.label }}
+          {{ email_form.email() }}
+          <span class="form-error">{% if email_form.email.errors %}{{ email_form.email.errors[0] }}{% endif %}</span>
+        </div>
+        <div class="form-row {% if email_form.current_password.errors %}invalid{% endif %}">
+          {{ email_form.current_password.label }}
+          {{ email_form.current_password() }}
+          <span class="form-error">{% if email_form.current_password.errors %}{{ email_form.current_password.errors[0] }}{% endif %}</span>
+        </div>
+        {{ email_form.submit_email(class="btn btn-ghost") }}
+      </form>
+
+      <form class="contact-form auth-card" method="POST" action="{{ url_for('dashboard.change_password') }}" novalidate>
+        <h3>Password</h3>
+        {{ password_form.hidden_tag() }}
+        <div class="form-row {% if password_form.current_password.errors %}invalid{% endif %}">
+          {{ password_form.current_password.label }}
+          {{ password_form.current_password() }}
+          <span class="form-error">{% if password_form.current_password.errors %}{{ password_form.current_password.errors[0] }}{% endif %}</span>
+        </div>
+        <div class="form-row {% if password_form.new_password.errors %}invalid{% endif %}">
+          {{ password_form.new_password.label }}
+          {{ password_form.new_password() }}
+          <span class="form-error">{% if password_form.new_password.errors %}{{ password_form.new_password.errors[0] }}{% endif %}</span>
+        </div>
+        <div class="form-row {% if password_form.confirm_new_password.errors %}invalid{% endif %}">
+          {{ password_form.confirm_new_password.label }}
+          {{ password_form.confirm_new_password() }}
+          <span class="form-error">{% if password_form.confirm_new_password.errors %}{{ password_form.confirm_new_password.errors[0] }}{% endif %}</span>
+        </div>
+        {{ password_form.submit_password(class="btn btn-ghost") }}
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="GIBYT" class="footer-logo">
+      <p class="footer-tagline">From Gigabytes to Innovation</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+        <a href="{{ url_for('main.work') }}">Our Work</a>
+        <a href="{{ url_for('main.products') }}">Products</a>
+        <a href="{{ url_for('main.careers') }}">Careers</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@gibyt.com">hello@gibyt.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> GIBYT. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

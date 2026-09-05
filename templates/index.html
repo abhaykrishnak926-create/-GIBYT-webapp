@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIBYT — From Gigabytes to Innovation</title>
+<meta name="description" content="GIBYT builds software products, websites, and apps — from first prototype to production.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="flash-messages">
+    {% for category, message in messages %}
+    <p class="flash flash-{{ category }}">{{ message }}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="{{ url_for('main.index') }}" class="brand">
+      <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="GIBYT" class="brand-logo">
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="{{ url_for('main.index') }}" class="active">Home</a>
+      <a href="{{ url_for('main.about') }}">About</a>
+      <a href="{{ url_for('main.work') }}">Our Work</a>
+      <a href="{{ url_for('main.products') }}">Products</a>
+      <a href="{{ url_for('main.careers') }}">Careers</a>
+      <a href="{{ url_for('main.contact') }}">Contact</a>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-primary nav-login">Login</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">Software studio</p>
+      <h1>Software, built<br>to actually ship.</h1>
+      <p class="hero-sub">
+        GIBYT designs and builds software products, websites, and apps —
+        from the first prototype to something real people use. We work in
+        small, working pieces, not slide decks.
+      </p>
+      <div class="hero-actions">
+        <a href="{{ url_for('main.work') }}" class="btn btn-primary">See our work</a>
+        <a href="{{ url_for('main.contact') }}" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="section" id="what-we-do">
+    <div class="section-head">
+      <h2>What we do</h2>
+      <p class="section-lede">Four areas, one team — we pick whichever combination a project actually needs.</p>
+    </div>
+
+    <ul class="service-list">
+      <li class="service-row">
+        <h3>Software Products</h3>
+        <p>End-to-end product builds — from a rough idea to something with real users, maintained and improved over time.</p>
+      </li>
+      <li class="service-row">
+        <h3>Web Development</h3>
+        <p>Fast, responsive websites and web applications, built with a clean architecture that can grow with the business.</p>
+      </li>
+      <li class="service-row">
+        <h3>App Development</h3>
+        <p>Mobile apps designed around what people actually need to do, not just what fits on a screen.</p>
+      </li>
+      <li class="service-row">
+        <h3>AI &amp; Automation</h3>
+        <p>Applying AI where it genuinely helps — classification, automation, and tools that remove real busywork.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PRODUCTS TEASER -->
+  <section class="section section-tint" id="products">
+    <div class="section-head">
+      <h2>Products</h2>
+      <p class="section-lede">We're building our first products in the open.</p>
+    </div>
+
+    <div class="placeholder-card">
+      <span class="status-pill">In development</span>
+      <p>Our first GIBYT products are being built right now. This page will list them, with what they do and how to try them, as soon as they're ready.</p>
+      <a href="{{ url_for('main.products') }}" class="text-link">Follow along on the Products page →</a>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK TEASER -->
+  <section class="section" id="work">
+    <div class="section-head">
+      <h2>Featured work</h2>
+      <p class="section-lede">The first projects behind GIBYT.</p>
+    </div>
+
+    <div class="placeholder-card">
+      <span class="status-pill">Scam &amp; Phishing Detector — Live</span>
+      <p>A text and URL scam classifier, live and deployed.</p>
+      <a href="{{ url_for('main.work') }}" class="text-link">See the full case study on Our Work →</a>
+    </div>
+  </section>
+
+  <!-- WHY GIBYT -->
+  <section class="section section-dark" id="why-gibyt">
+    <div class="why-inner">
+      <h2>Why GIBYT</h2>
+      <p>
+        Most software takes too long to become real. We keep the loop short —
+        build a working piece, get it in front of someone, learn, and build
+        the next piece. Fewer slides, more shipped software.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <h2>Let's build something that ships.</h2>
+    <p>Explore what we're working on, or tell us what you're trying to build.</p>
+    <div class="hero-actions">
+      <a href="{{ url_for('main.products') }}" class="btn btn-primary">Explore products</a>
+      <a href="{{ url_for('main.contact') }}" class="btn btn-ghost">Contact GIBYT</a>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-ghost">Create an account</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="GIBYT" class="footer-logo">
+      <p class="footer-tagline">From Gigabytes to Innovation</p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+        <a href="{{ url_for('main.work') }}">Our Work</a>
+        <a href="{{ url_for('main.products') }}">Products</a>
+        <a href="{{ url_for('main.careers') }}">Careers</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@gibyt.com">hello@gibyt.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> GIBYT. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

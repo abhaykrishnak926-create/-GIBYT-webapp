@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -56,18 +56,25 @@
   <section class="section">
     <div class="product-grid">
 
-      <div class="product-card">
-        <span class="status-pill">In development</span>
-        <h3>GIBYT Product #1</h3>
-        <p>Our first product is being built right now. Details go here once there's something real to show.</p>
-        <a href="{{ url_for('main.contact') }}" class="text-link">Get notified →</a>
-      </div>
+      <article class="product-card product-card-featured">
+        <div class="product-card-top">
+          <span class="status-pill product-live-pill">Live</span>
+          <span class="product-offer">FREE · LIMITED TIME</span>
+        </div>
+        <h3>DYNAMIS</h3>
+        <p class="product-description">A focused fitness companion for tracking workouts, body measurements, nutrition, progress and more in one place.</p>
+        <div class="product-price" aria-label="Limited-time free offer">
+          <span class="product-price-current">Free</span>
+          <span class="product-price-old">₹99</span>
+        </div>
+        <a href="https://dynamis-woad.vercel.app/" class="btn btn-primary product-cta" target="_blank" rel="noopener">Open DYNAMIS ↗</a>
+      </article>
 
-      <div class="product-card">
+      <article class="product-card product-card-muted">
         <span class="status-pill status-pill-muted">Coming soon</span>
         <h3>GIBYT Product #2</h3>
-        <p>Planned, not yet started. This card is a placeholder until the roadmap firms up.</p>
-      </div>
+        <p>Planned, not yet started. This card stays here until the roadmap has something worth showing.</p>
+      </article>
 
     </div>
   </section>

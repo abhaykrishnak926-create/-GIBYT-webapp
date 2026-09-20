@@ -1,7 +1,7 @@
 from flask import Flask
 
 from config import Config
-from extensions import bcrypt, csrf, db, limiter, login_manager, migrate
+from extensions import bcrypt, csrf, db, limiter, login_manager, migrate, compress
 
 
 def create_app():
@@ -13,6 +13,7 @@ def create_app():
     csrf.init_app(app)
     migrate.init_app(app, db)
     limiter.init_app(app)
+    compress.init_app(app)
 
     login_manager.init_app(app)
     login_manager.login_view = "auth.login"

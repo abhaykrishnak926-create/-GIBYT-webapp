@@ -35,3 +35,7 @@ class Config:
     SESSION_COOKIE_SECURE = os.environ.get("FLASK_ENV") == "production"
     REMEMBER_COOKIE_SECURE = os.environ.get("FLASK_ENV") == "production"
     SESSION_COOKIE_HTTPONLY = True
+
+    MAX_CONTENT_LENGTH = 5 * 1024 * 1024  # 5MB upload limit
+
+    SEND_FILE_MAX_AGE_DEFAULT = 60 * 60 * 24 * 7  # cache static files for 7 days

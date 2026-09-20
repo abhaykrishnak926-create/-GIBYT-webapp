@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, SubmitField
-from wtforms.validators import DataRequired, Email, EqualTo, Length
+from flask_wtf.file import FileAllowed, FileField
+from wtforms import PasswordField, StringField, SubmitField, TextAreaField
+from wtforms.validators import DataRequired, Email, EqualTo, Length, Optional
 
 
 class UpdateNameForm(FlaskForm):
@@ -37,3 +38,19 @@ class ChangePasswordForm(FlaskForm):
         validators=[DataRequired(message="Confirm your new password."), EqualTo("new_password", message="Passwords must match.")],
     )
     submit_password = SubmitField("Change password")
+
+
+class ProfileForm(FlaskForm):
+    bio = TextAreaField(
+        "Bio",
+        validators=[Optional(), Length(max=500, message="Keep it under 500 characters.")],
+    )
+    location = StringField(
+        "Location",
+        validators=[Optional(), Length(max=120)],
+    )
+    photo = FileField(
+        "Profile photo",
+        validators=[Optional(), FileAllowed(["jpg", "jpeg", "png", "webp"], "Images only (jpg, png, webp).")],
+    )
+    submit_profile = SubmitField("Save profile")

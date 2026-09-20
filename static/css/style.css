@@ -584,6 +584,56 @@ button:focus-visible {
 }
 
 /* ============================
+   Profile photo
+   ============================ */
+.profile-photo {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ============================
+   Modern file input (replaces default browser button)
+   ============================ */
+input[type="file"] {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--slate);
+}
+input[type="file"]::file-selector-button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  margin-right: 0.75rem;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+input[type="file"]::file-selector-button:hover {
+  border-color: var(--indigo);
+  color: var(--indigo);
+}
+/* Safari fallback (older versions use webkit-prefixed pseudo-element) */
+input[type="file"]::-webkit-file-upload-button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  margin-right: 0.75rem;
+}
+
+/* ============================
    Case studies (Our Work)
    ============================ */
 .case-study {
@@ -603,3 +653,243 @@ button:focus-visible {
 .case-header h3 { margin: 0; }
 .case-field { margin-bottom: 0.6rem; }
 .case-field strong { color: var(--ink); }
+
+/* ============================
+   DYNAMIS product cards
+   ============================ */
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 270px;
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(11, 10, 23, 0.05);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  border-color: #C8C3EA;
+  box-shadow: 0 14px 34px rgba(11, 10, 23, 0.09);
+}
+
+.product-card-featured {
+  border: 1.5px solid var(--indigo);
+  background: linear-gradient(145deg, #fff 0%, #F8F7FF 100%);
+}
+
+.product-card-muted {
+  box-shadow: none;
+}
+
+.product-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.product-card .status-pill {
+  margin: 0;
+}
+
+.product-live-pill {
+  background: var(--indigo);
+  color: var(--white);
+}
+
+.product-offer {
+  color: var(--indigo-deep);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.product-description {
+  max-width: 48rem;
+}
+
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin-top: auto;
+  padding: 1rem 0 1.15rem;
+}
+
+.product-price-current {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.product-price-old {
+  color: var(--slate);
+  font-size: 1rem;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.product-cta {
+  align-self: flex-start;
+}
+
+.dashboard-product-card {
+  max-width: 720px;
+}
+
+/* ============================
+   Profile
+   ============================ */
+.profile-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.profile-card {
+  width: min(100%, 760px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  background: var(--white);
+  box-shadow: 0 12px 36px rgba(11, 10, 23, 0.06);
+}
+
+.profile-card-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.8fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.profile-avatar {
+  width: 84px;
+  height: 84px;
+  border: 1px solid var(--border);
+  background: var(--indigo-tint);
+}
+
+.profile-avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--indigo-deep);
+  font-size: 1.6rem;
+}
+
+.profile-identity h3 {
+  margin: 0.1rem 0 0.15rem;
+  overflow-wrap: anywhere;
+}
+
+.profile-identity p {
+  margin: 0;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.profile-label {
+  color: var(--slate);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-upload {
+  min-width: 0;
+}
+
+.profile-upload label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.profile-upload input[type="file"] {
+  width: 100%;
+}
+
+.profile-fields {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+}
+
+.profile-fields .form-row {
+  min-width: 0;
+}
+
+.profile-fields textarea,
+.profile-fields input {
+  width: 100%;
+  min-height: 46px;
+}
+
+.profile-fields textarea {
+  min-height: 112px;
+}
+
+.profile-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.profile-card-footer p {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+.profile-card-footer .btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .product-card-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .profile-card {
+    padding: 1.15rem;
+  }
+
+  .profile-card-header,
+  .profile-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card-header {
+    align-items: start;
+  }
+
+  .profile-card-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .profile-card-footer .btn {
+    width: 100%;
+  }
+}

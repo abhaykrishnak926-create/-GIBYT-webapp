@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -50,14 +50,79 @@
     <p class="hero-sub">Member since {{ current_user.created_at.strftime('%B %d, %Y') }}.</p>
   </section>
 
-  <section class="section">
+  <section class="section profile-section" id="profile">
     <div class="section-head">
-      <h2>Available products</h2>
-      <p class="section-lede">GIBYT's own products, once they're ready to use.</p>
+      <p class="eyebrow">Your details</p>
+      <h2>Profile</h2>
+      <p class="section-lede">Keep the basics up to date. Your photo, bio and location are optional.</p>
     </div>
-    <div class="placeholder-card">
-      <span class="status-pill status-pill-muted">Coming soon</span>
-      <p>No products are live yet - this is where they'll show up once they exist. Nothing to see here for now.</p>
+
+    <form class="profile-card" method="POST" action="{{ url_for('dashboard.update_profile') }}" enctype="multipart/form-data" novalidate>
+      {{ profile_form.hidden_tag() }}
+
+      <div class="profile-card-header">
+        <div class="profile-identity">
+          {% if current_user.photo_data %}
+          <img src="{{ url_for('dashboard.photo', user_id=current_user.id) }}" alt="{{ current_user.name }}" class="profile-photo profile-avatar">
+          {% else %}
+          <div class="profile-photo profile-avatar profile-avatar-fallback" aria-hidden="true">
+            {{ current_user.name[0] | upper }}
+          </div>
+          {% endif %}
+          <div>
+            <span class="profile-label">Account</span>
+            <h3>{{ current_user.name }}</h3>
+            <p>{{ current_user.email }}</p>
+          </div>
+        </div>
+
+        <div class="profile-upload">
+          {{ profile_form.photo.label }}
+          {{ profile_form.photo() }}
+          <span class="form-error">{% if profile_form.photo.errors %}{{ profile_form.photo.errors[0] }}{% endif %}</span>
+        </div>
+      </div>
+
+      <div class="profile-fields">
+        <div class="form-row {% if profile_form.bio.errors %}invalid{% endif %}">
+          {{ profile_form.bio.label }}
+          {{ profile_form.bio(rows="4", placeholder="Tell people a little about yourself") }}
+          <span class="form-error">{% if profile_form.bio.errors %}{{ profile_form.bio.errors[0] }}{% endif %}</span>
+        </div>
+
+        <div class="form-row {% if profile_form.location.errors %}invalid{% endif %}">
+          {{ profile_form.location.label }}
+          {{ profile_form.location(placeholder="City, country") }}
+          <span class="form-error">{% if profile_form.location.errors %}{{ profile_form.location.errors[0] }}{% endif %}</span>
+        </div>
+      </div>
+
+      <div class="profile-card-footer">
+        <p>Only add what you're comfortable sharing.</p>
+        {{ profile_form.submit_profile(class="btn btn-primary") }}
+      </div>
+    </form>
+  </section>
+
+  <section class="section section-tint" id="products">
+    <div class="section-head">
+      <p class="eyebrow">Products</p>
+      <h2>Available products</h2>
+      <p class="section-lede">GIBYT products you can use right now.</p>
+    </div>
+
+    <div class="product-card product-card-featured dashboard-product-card">
+      <div class="product-card-top">
+        <span class="status-pill product-live-pill">Live</span>
+        <span class="product-offer">FREE · LIMITED TIME</span>
+      </div>
+      <h3>DYNAMIS</h3>
+      <p class="product-description">Track workouts, measurements, nutrition and progress in one place.</p>
+      <div class="product-price">
+        <span class="product-price-current">Free</span>
+        <span class="product-price-old">₹99</span>
+      </div>
+      <a href="https://dynamis-woad.vercel.app/" class="btn btn-primary product-cta" target="_blank" rel="noopener">Open DYNAMIS ↗</a>
     </div>
   </section>
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -98,10 +98,18 @@
       <p class="section-lede">We're building our first products in the open.</p>
     </div>
 
-    <div class="placeholder-card">
-      <span class="status-pill">In development</span>
-      <p>Our first GIBYT products are being built right now. This page will list them, with what they do and how to try them, as soon as they're ready.</p>
-      <a href="{{ url_for('main.products') }}" class="text-link">Follow along on the Products page →</a>
+    <div class="product-card product-card-featured">
+      <div class="product-card-top">
+        <span class="status-pill product-live-pill">Live</span>
+        <span class="product-offer">FREE · LIMITED TIME</span>
+      </div>
+      <h3>DYNAMIS</h3>
+      <p class="product-description">A focused fitness companion for workouts, measurements, nutrition and progress.</p>
+      <div class="product-price">
+        <span class="product-price-current">Free</span>
+        <span class="product-price-old">₹99</span>
+      </div>
+      <a href="https://dynamis-woad.vercel.app/" class="btn btn-primary product-cta" target="_blank" rel="noopener">Open DYNAMIS ↗</a>
     </div>
   </section>
 

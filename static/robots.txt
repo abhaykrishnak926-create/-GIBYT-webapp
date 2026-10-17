@@ -4,7 +4,6 @@
 # OpenAI SearchBot (Used by ChatGPT Search)
 User-agent: OAI-SearchBot
 Allow: /
-Disallow: /dashboard/
 Disallow: /dashboard
 Disallow: /login
 Disallow: /signup
@@ -14,7 +13,6 @@ Disallow: /forgot-password
 # OpenAI General Web Crawler (GPTBot)
 User-agent: GPTBot
 Allow: /
-Disallow: /dashboard/
 Disallow: /dashboard
 Disallow: /login
 Disallow: /signup
@@ -24,7 +22,6 @@ Disallow: /forgot-password
 # Perplexity AI Search Crawler
 User-agent: PerplexityBot
 Allow: /
-Disallow: /dashboard/
 Disallow: /dashboard
 Disallow: /login
 Disallow: /signup
@@ -34,7 +31,6 @@ Disallow: /forgot-password
 # Anthropic Claude Crawler
 User-agent: ClaudeBot
 Allow: /
-Disallow: /dashboard/
 Disallow: /dashboard
 Disallow: /login
 Disallow: /signup
@@ -44,7 +40,6 @@ Disallow: /forgot-password
 # Apple AI & Siri Search Crawler
 User-agent: Applebot-Extended
 Allow: /
-Disallow: /dashboard/
 Disallow: /dashboard
 Disallow: /login
 Disallow: /signup
@@ -54,7 +49,6 @@ Disallow: /forgot-password
 # Default rules for all web crawlers (Googlebot, Bingbot, DuckDuckBot, etc.)
 User-agent: *
 Allow: /
-Disallow: /dashboard/
 Disallow: /dashboard
 Disallow: /login
 Disallow: /signup

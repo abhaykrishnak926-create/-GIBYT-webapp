@@ -3,9 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GIBYT — From Gigabytes to Innovation</title>
-<meta name="description" content="GIBYT builds software products, websites, and apps — from first prototype to production.">
+<title>GIBYT — Software Studio | From Gigabytes to Innovation</title>
+<meta name="description" content="GIBYT designs and builds software products, web applications, mobile apps, and AI solutions — from prototype to production.">
 <meta name="google-site-verification" content="qjxgMXtkbgEZwv_YADRtvcPE0C--0VfXcdhC7fJa4lE" />
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gibyt-webapp.vercel.app/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="GIBYT">
+<meta property="og:url" content="https://gibyt-webapp.vercel.app/">
+<meta property="og:title" content="GIBYT — Software Studio | From Gigabytes to Innovation">
+<meta property="og:description" content="GIBYT designs and builds software products, web applications, mobile apps, and AI solutions — from prototype to production.">
+<meta property="og:image" content="https://gibyt-webapp.vercel.app/static/images/logo2.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GIBYT — Software Studio | From Gigabytes to Innovation">
+<meta name="twitter:description" content="GIBYT designs and builds software products, web applications, mobile apps, and AI solutions — from prototype to production.">
+<meta name="twitter:image" content="https://gibyt-webapp.vercel.app/static/images/logo2.png">
+
+<!-- JSON-LD Structured Data: Organization & WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gibyt-webapp.vercel.app/#organization",
+      "name": "GIBYT",
+      "url": "https://gibyt-webapp.vercel.app/",
+      "logo": "https://gibyt-webapp.vercel.app/static/images/logo2.png",
+      "slogan": "From Gigabytes to Innovation",
+      "description": "GIBYT is a software development studio building modern software products, web applications, mobile apps, and AI automation tools.",
+      "email": "team.gibyt@gmail.com",
+      "sameAs": [
+        "https://github.com/abhaykrishnak926-create",
+        "https://www.linkedin.com/in/abhay-krishna-k-b422a4380"
+      ],
+      "knowsAbout": [
+        "Software Product Development",
+        "Web Application Development",
+        "Mobile App Development",
+        "AI & Automation",
+        "Machine Learning Text Classification",
+        "Phishing & Scam Detection"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gibyt-webapp.vercel.app/#website",
+      "url": "https://gibyt-webapp.vercel.app/",
+      "name": "GIBYT",
+      "description": "Software studio building software products, web applications, mobile apps, and AI automation.",
+      "publisher": {
+        "@id": "https://gibyt-webapp.vercel.app/#organization"
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -75,19 +134,19 @@
     <ul class="service-list">
       <li class="service-row">
         <h3>Software Products</h3>
-        <p>End-to-end product builds — from a rough idea to something with real users, maintained and improved over time.</p>
+        <p>End-to-end software product development — from proof of concept and prototype to production launch, scaling, and long-term maintenance.</p>
       </li>
       <li class="service-row">
         <h3>Web Development</h3>
-        <p>Fast, responsive websites and web applications, built with a clean architecture that can grow with the business.</p>
+        <p>High-performance websites and full-stack web applications built with clean architecture, robust APIs, and modern databases.</p>
       </li>
       <li class="service-row">
         <h3>App Development</h3>
-        <p>Mobile apps designed around what people actually need to do, not just what fits on a screen.</p>
+        <p>Intuitive mobile and cross-platform applications built for real user needs, seamless workflows, and everyday reliability.</p>
       </li>
       <li class="service-row">
         <h3>AI &amp; Automation</h3>
-        <p>Applying AI where it genuinely helps — classification, automation, and tools that remove real busywork.</p>
+        <p>Practical artificial intelligence and machine learning solutions — intelligent text classification, scam &amp; phishing detection, and process automation.</p>
       </li>
     </ul>
   </section>
@@ -105,7 +164,7 @@
         <span class="product-offer">FREE · LIMITED TIME</span>
       </div>
       <h3>DYNAMIS</h3>
-      <p class="product-description">A focused fitness companion for workouts, measurements, nutrition and progress.</p>
+      <p class="product-description">A focused fitness companion web application built by GIBYT for logging workouts, tracking body measurements, nutrition, and personal progress in one secure account.</p>
       <div class="product-price">
         <span class="product-price-current">Free</span>
         <span class="product-price-old">₹99</span>
@@ -122,9 +181,16 @@
     </div>
 
     <div class="placeholder-card">
-      <span class="status-pill">Scam &amp; Phishing Detector — Live</span>
-      <p>A text and URL scam classifier, live and deployed.</p>
-      <a href="{{ url_for('main.work') }}" class="text-link">See the full case study on Our Work →</a>
+      <div class="product-card-top">
+        <span class="status-pill product-live-pill">Live</span>
+        <span class="product-offer">AI &amp; MACHINE LEARNING</span>
+      </div>
+      <h3>Scam &amp; Phishing Detector</h3>
+      <p class="product-description">A machine learning classification platform designed to detect scam messages and malicious URLs. Powered by TF-IDF with Logistic Regression for text classification (96% spam recall on a specialized Indian-context dataset) and Random Forest URL phishing detection using PhiUSIIL features.</p>
+      <div class="hero-actions" style="margin-top: 1.25rem;">
+        <a href="https://scam-detector-30nr.onrender.com" class="btn btn-primary" target="_blank" rel="noopener">Open Scam Detector ↗</a>
+        <a href="{{ url_for('main.work') }}" class="btn btn-ghost">Read full case study →</a>
+      </div>
     </div>
   </section>
 

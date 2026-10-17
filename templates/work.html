@@ -3,8 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Work — GIBYT</title>
-<meta name="description" content="Case studies and projects from GIBYT.">
+<title>Our Work &amp; Case Studies — GIBYT</title>
+<meta name="description" content="Explore production case studies from GIBYT: Scam &amp; Phishing Detector (AI classifier) and DYNAMIS (fitness platform). Real problems, clean architecture, and working software.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gibyt-webapp.vercel.app/work">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="GIBYT">
+<meta property="og:url" content="https://gibyt-webapp.vercel.app/work">
+<meta property="og:title" content="Our Work &amp; Case Studies — GIBYT">
+<meta property="og:description" content="Explore production case studies from GIBYT: Scam &amp; Phishing Detector (AI classifier) and DYNAMIS (fitness platform).">
+<meta property="og:image" content="https://gibyt-webapp.vercel.app/static/images/logo2.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Our Work &amp; Case Studies — GIBYT">
+<meta name="twitter:description" content="Explore production case studies from GIBYT: Scam &amp; Phishing Detector (AI classifier) and DYNAMIS (fitness platform).">
+<meta name="twitter:image" content="https://gibyt-webapp.vercel.app/static/images/logo2.png">
+
+<!-- JSON-LD: SoftwareApplication items -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Scam & Phishing Detector",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Web Browser",
+      "url": "https://scam-detector-30nr.onrender.com",
+      "description": "A machine learning text and URL classification tool built for Indian-context scam messages and phishing link detection.",
+      "author": {
+        "@type": "Organization",
+        "name": "GIBYT",
+        "url": "https://gibyt-webapp.vercel.app/"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "DYNAMIS",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web Browser",
+      "url": "https://dynamis-woad.vercel.app/",
+      "description": "A focused fitness companion web application for workouts, body measurements, nutrition, and progress tracking.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "GIBYT",
+        "url": "https://gibyt-webapp.vercel.app/"
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -54,12 +112,14 @@
   </section>
 
   <section class="section">
+    <div class="section-head">
+      <h2>Production Case Studies</h2>
+      <p class="section-lede">Real problems, verified technical architectures, and live deployments.</p>
+    </div>
     <div class="case-study">
       <div class="case-header">
-        <div>
-         <span class="status-pill product-live-pill">Live</span>
-         <h3>Scam &amp; Phishing Detector</h3>
-        </div>
+        <span class="status-pill product-live-pill">Live</span>
+        <h3>Scam &amp; Phishing Detector</h3>
       </div>
       <p class="case-field"><strong>Problem —</strong> Text-based scams and phishing links are easy to miss, and most detection tools aren't tuned for the way scam messages actually read.</p>
       <p class="case-field"><strong>Solution —</strong> A text classifier for scam messages, paired with a separate URL/phishing classifier so both the message and the link can be checked.</p>
@@ -70,7 +130,7 @@
 
     <div class="case-study case-study-featured">
       <div class="case-header">
-        <div>
+        <div class="case-header-main">
           <span class="status-pill product-live-pill">Live</span>
           <h3>DYNAMIS</h3>
         </div>

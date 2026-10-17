@@ -1,4 +1,4 @@
-from flask import Blueprint, flash, redirect, render_template, url_for
+from flask import Blueprint, current_app, flash, redirect, render_template, send_from_directory, url_for
 
 from extensions import db
 from forms.contact_form import ContactForm
@@ -49,3 +49,13 @@ def contact():
         return redirect(url_for("main.contact"))
 
     return render_template("contact.html", form=form)
+
+
+@main_bp.route("/robots.txt")
+def robots_txt():
+    return send_from_directory(current_app.static_folder, "robots.txt", mimetype="text/plain")
+
+
+@main_bp.route("/sitemap.xml")
+def sitemap_xml():
+    return send_from_directory(current_app.static_folder, "sitemap.xml", mimetype="application/xml")

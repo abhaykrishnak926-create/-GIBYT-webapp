@@ -119,7 +119,7 @@ p { margin: 0 0 1em; color: var(--slate); }
   justify-content: space-between;
 }
 
-.brand-logo { height: 100px; width: auto; }
+.brand-logo { height: 80px; width: auto; }
 
 .nav-links {
   display: flex;

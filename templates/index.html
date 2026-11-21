@@ -1,37 +1,47 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GIBYT | Software Development, Web Apps &amp; AI Solutions</title>
-<meta name="description" content="GIBYT is a software development studio building web applications, mobile apps, software products, and practical AI solutions from prototype to production.">
-<meta name="google-site-verification" content="qjxgMXtkbgEZwv_YADRtvcPE0C--0VfXcdhC7fJa4lE" />
+
+<!-- Primary SEO -->
+<title>GIBYT – Software Development Studio | Web, Apps &amp; AI</title>
+
+<meta name="description" content="GIBYT is a software development studio building web applications, mobile apps, software products, and AI-powered solutions. From ideas and prototypes to production-ready software.">
+
 <meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="google-site-verification" content="qjxgMXtkbgEZwv_YADRtvcPE0C--0VfXcdhC7fJa4lE">
+
 <link rel="canonical" href="https://gibyt-webapp.vercel.app/">
-<!-- Favicons: keep this image URL stable and make sure the logo is square (at least 48 × 48 px). -->
+
+<!-- Favicons -->
 <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo2.png') }}">
 <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/logo2.png') }}">
 <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/logo2.png') }}">
+
 <meta name="theme-color" content="#0b0b0d">
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="GIBYT">
 <meta property="og:url" content="https://gibyt-webapp.vercel.app/">
-<meta property="og:title" content="GIBYT | Software Development, Web Apps &amp; AI Solutions">
-<meta property="og:description" content="GIBYT is a software development studio building web applications, mobile apps, software products, and practical AI solutions from prototype to production.">
+<meta property="og:title" content="GIBYT – Software Development Studio | Web, Apps &amp; AI">
+<meta property="og:description" content="GIBYT builds software products, web applications, mobile apps, and practical AI solutions. From ideas and prototypes to production-ready software.">
 <meta property="og:image" content="https://gibyt-webapp.vercel.app/static/images/logo2.png">
-<meta property="og:image:alt" content="GIBYT software development studio logo">
+<meta property="og:image:alt" content="GIBYT – From Gigabytes to Innovation">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GIBYT | Software Development, Web Apps &amp; AI Solutions">
-<meta name="twitter:description" content="GIBYT is a software development studio building web applications, mobile apps, software products, and practical AI solutions from prototype to production.">
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GIBYT – Software Development Studio | Web, Apps &amp; AI">
+<meta name="twitter:description" content="Building software products, web applications, mobile apps, and practical AI solutions. From ideas to production.">
 <meta name="twitter:image" content="https://gibyt-webapp.vercel.app/static/images/logo2.png">
-<meta name="twitter:image:alt" content="GIBYT software development studio logo">
+<meta name="twitter:image:alt" content="GIBYT – From Gigabytes to Innovation">
 
-<!-- JSON-LD Structured Data: Organization & WebSite -->
+<!-- Structured Data: Organization, Website and WebPage -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,10 +51,14 @@
       "@id": "https://gibyt-webapp.vercel.app/#organization",
       "name": "GIBYT",
       "url": "https://gibyt-webapp.vercel.app/",
-      "logo": "https://gibyt-webapp.vercel.app/static/images/logo2.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gibyt-webapp.vercel.app/static/images/logo2.png"
+      },
       "slogan": "From Gigabytes to Innovation",
-      "description": "GIBYT is a software development studio building modern software products, web applications, mobile apps, and AI automation tools.",
+      "description": "GIBYT is a software development studio building software products, web applications, mobile apps, and AI-powered automation solutions.",
       "email": "team.gibyt@gmail.com",
+      "foundingDate": "2026",
       "sameAs": [
         "https://github.com/abhaykrishnak926-create",
         "https://www.linkedin.com/company/gibyt/"
@@ -52,10 +66,14 @@
       "knowsAbout": [
         "Software Product Development",
         "Web Application Development",
+        "Full-Stack Development",
         "Mobile App Development",
-        "AI & Automation",
-        "Machine Learning Text Classification",
-        "Phishing & Scam Detection"
+        "Artificial Intelligence",
+        "Machine Learning",
+        "AI Automation",
+        "Text Classification",
+        "Phishing Detection",
+        "Scam Detection"
       ]
     },
     {
@@ -63,7 +81,7 @@
       "@id": "https://gibyt-webapp.vercel.app/#website",
       "url": "https://gibyt-webapp.vercel.app/",
       "name": "GIBYT",
-      "description": "Software studio building software products, web applications, mobile apps, and AI automation.",
+      "description": "GIBYT is a software development studio building software products, web applications, mobile apps, and AI solutions.",
       "publisher": {
         "@id": "https://gibyt-webapp.vercel.app/#organization"
       },
@@ -73,12 +91,15 @@
       "@type": "WebPage",
       "@id": "https://gibyt-webapp.vercel.app/#webpage",
       "url": "https://gibyt-webapp.vercel.app/",
-      "name": "GIBYT | Software Development, Web Apps & AI Solutions",
-      "description": "GIBYT is a software development studio building web applications, mobile apps, software products, and practical AI solutions from prototype to production.",
+      "name": "GIBYT – Software Development Studio | Web, Apps & AI",
+      "description": "Explore GIBYT's software products, web development, mobile applications, and AI solutions.",
       "isPartOf": {
         "@id": "https://gibyt-webapp.vercel.app/#website"
       },
       "about": {
+        "@id": "https://gibyt-webapp.vercel.app/#organization"
+      },
+      "mainEntity": {
         "@id": "https://gibyt-webapp.vercel.app/#organization"
       },
       "inLanguage": "en"
@@ -87,11 +108,16 @@
 }
 </script>
 
+<!-- Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
+
 <body>
 
 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -106,6 +132,7 @@
 
 <header class="site-header">
   <nav class="navbar" aria-label="Main navigation">
+
     <a href="{{ url_for('main.index') }}" class="brand">
       <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="GIBYT" class="brand-logo">
     </a>
@@ -123,6 +150,7 @@
       <a href="{{ url_for('main.contact') }}">Contact</a>
       <a href="{{ url_for('auth.login') }}" class="btn btn-primary nav-login">Login</a>
     </div>
+
   </nav>
 </header>
 
@@ -131,14 +159,18 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-grid" aria-hidden="true"></div>
+
     <div class="hero-inner">
       <p class="eyebrow">Software studio</p>
+
       <h1>Software, built<br>to actually ship.</h1>
+
       <p class="hero-sub">
         GIBYT designs and builds software products, websites, and apps —
         from the first prototype to something real people use. We work in
         small, working pieces, not slide decks.
       </p>
+
       <div class="hero-actions">
         <a href="{{ url_for('main.work') }}" class="btn btn-primary">See our work</a>
         <a href="{{ url_for('main.contact') }}" class="btn btn-ghost">Get in touch</a>
@@ -154,22 +186,27 @@
     </div>
 
     <ul class="service-list">
+
       <li class="service-row">
         <h3>Software Products</h3>
         <p>End-to-end software product development — from proof of concept and prototype to production launch, scaling, and long-term maintenance.</p>
       </li>
+
       <li class="service-row">
         <h3>Web Development</h3>
         <p>High-performance websites and full-stack web applications built with clean architecture, robust APIs, and modern databases.</p>
       </li>
+
       <li class="service-row">
         <h3>App Development</h3>
         <p>Intuitive mobile and cross-platform applications built for real user needs, seamless workflows, and everyday reliability.</p>
       </li>
+
       <li class="service-row">
         <h3>AI &amp; Automation</h3>
         <p>Practical artificial intelligence and machine learning solutions — intelligent text classification, scam &amp; phishing detection, and process automation.</p>
       </li>
+
     </ul>
   </section>
 
@@ -181,21 +218,29 @@
     </div>
 
     <div class="product-card product-card-featured">
+
       <div class="product-card-top">
         <span class="status-pill product-live-pill">Live</span>
         <span class="product-offer">FREE · LIMITED TIME</span>
       </div>
+
       <h3>DYNAMIS</h3>
-      <p class="product-description">A focused fitness companion web application built by GIBYT for logging workouts, tracking body measurements, nutrition, and personal progress in one secure account.</p>
+
+      <p class="product-description">
+        A focused fitness companion web application built by GIBYT for logging workouts, tracking body measurements, nutrition, and personal progress in one secure account.
+      </p>
+
       <div class="product-price">
         <span class="product-price-current">Free</span>
         <span class="product-price-old">₹99</span>
       </div>
+
       <a href="https://dynamis-woad.vercel.app/" class="btn btn-primary product-cta" target="_blank" rel="noopener">Open DYNAMIS ↗</a>
+
     </div>
   </section>
 
-  <!-- FEATURED WORK TEASER -->
+  <!-- FEATURED WORK -->
   <section class="section" id="work">
     <div class="section-head">
       <h2>Featured work</h2>
@@ -203,16 +248,23 @@
     </div>
 
     <div class="placeholder-card">
+
       <div class="product-card-top">
         <span class="status-pill product-live-pill">Live</span>
         <span class="product-offer">AI &amp; MACHINE LEARNING</span>
       </div>
+
       <h3>Scam &amp; Phishing Detector</h3>
-      <p class="product-description">A machine learning classification platform designed to detect scam messages and malicious URLs. Powered by TF-IDF with Logistic Regression for text classification (96% spam recall on a specialized Indian-context dataset) and Random Forest URL phishing detection using PhiUSIIL features.</p>
+
+      <p class="product-description">
+        A machine learning classification platform designed to detect scam messages and malicious URLs. Powered by TF-IDF with Logistic Regression for text classification (96% spam recall on a specialized Indian-context dataset) and Random Forest URL phishing detection using PhiUSIIL features.
+      </p>
+
       <div class="hero-actions" style="margin-top: 1.25rem;">
         <a href="https://scam-detector-30nr.onrender.com" class="btn btn-primary" target="_blank" rel="noopener">Open Scam Detector ↗</a>
         <a href="{{ url_for('main.work') }}" class="btn btn-ghost">Read full case study →</a>
       </div>
+
     </div>
   </section>
 
@@ -220,6 +272,7 @@
   <section class="section section-dark" id="why-gibyt">
     <div class="why-inner">
       <h2>Why GIBYT</h2>
+
       <p>
         Most software takes too long to become real. We keep the loop short —
         build a working piece, get it in front of someone, learn, and build
@@ -231,7 +284,9 @@
   <!-- CTA -->
   <section class="section cta-section">
     <h2>Let's build something that ships.</h2>
+
     <p>Explore what we're working on, or tell us what you're trying to build.</p>
+
     <div class="hero-actions">
       <a href="{{ url_for('main.products') }}" class="btn btn-primary">Explore products</a>
       <a href="{{ url_for('main.contact') }}" class="btn btn-ghost">Contact GIBYT</a>
@@ -242,13 +297,16 @@
 </main>
 
 <footer class="site-footer">
+
   <div class="footer-top">
+
     <div class="footer-brand">
       <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="GIBYT" class="footer-logo">
       <p class="footer-tagline">From Gigabytes to Innovation</p>
     </div>
 
     <div class="footer-links">
+
       <div class="footer-col">
         <h4>Site</h4>
         <a href="{{ url_for('main.index') }}">Home</a>
@@ -258,23 +316,28 @@
         <a href="{{ url_for('main.careers') }}">Careers</a>
         <a href="{{ url_for('main.contact') }}">Contact</a>
       </div>
+
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="mailto:team.gibyt@gmail.com">team.gibyt@gmail.com</a>
       </div>
+
       <div class="footer-col">
         <h4>Legal</h4>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
       </div>
+
     </div>
   </div>
 
   <div class="footer-bottom">
     <p>&copy; <span id="year"></span> GIBYT. All rights reserved.</p>
   </div>
+
 </footer>
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
 </html>
